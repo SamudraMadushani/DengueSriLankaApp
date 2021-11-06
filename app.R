@@ -199,8 +199,10 @@ server <- function(input, output, session) {
         fit_TRAIN <- DataDengueTEST%>%
           model(snaive=SNAIVE(Counts),naive=NAIVE(Counts),ets=ETS(Counts),avg = MEAN(Counts))
         Fvalues<-fit_TRAIN %>% forecast(h=input$period)
+        Fvalues <- rename(Fvalues, "PointForecast"=".mean")
+        Fvalues <- rename(Fvalues, "Model"=".model")
         Fvalues<-data.frame(Fvalues)
-        Fvalues$.mean<-round(Fvalues$.mean,0)
+        Fvalues$PointForecast<-round(Fvalues$PointForecast,0)
         Fvalues<-Fvalues[,c(1,2,3,4,6)]
       }
       else{
@@ -217,9 +219,10 @@ server <- function(input, output, session) {
           )
         # Forecast value calculation
         Fvalues<-fit_TRAIN %>% forecast(h=input$period)
+        Fvalues <- rename(Fvalues, "PointForecast"=".mean")
+        Fvalues <- rename(Fvalues, "Model"=".model")
         Fvalues<-data.frame(Fvalues)
-        Fvalues = data.table(Fvalues)
-        Fvalues$.mean<-round(Fvalues$.mean,0)
+        Fvalues$PointForecast<-round(Fvalues$PointForecast,0)
         Fvalues<-Fvalues[,c(1,2,3,4,6)]
       }  
     }
