@@ -11,8 +11,8 @@ https://samudramadushani.shinyapps.io/DengueAPPversion2/
 
 ## Created by
 
-L. S. Madushani, Department of Mathematics, University of Sri Jayewardenepura.
-Dr. Thiyanga S. Talagala, Department of Statistics, University of Sri Jayewardenepura.
+##### L. S. Madushani, Department of Mathematics, University of Sri Jayewardenepura.
+##### Dr. Thiyanga S. Talagala, Department of Statistics, University of Sri Jayewardenepura.
 
 ## References
 
